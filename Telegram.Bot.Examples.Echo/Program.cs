@@ -53,7 +53,7 @@ namespace Telegram.Bot.Examples.Echo
         {
             List<InlineQueryResult> results = new List<InlineQueryResult>();
             var client = new RestClient("https://api.coinmarketcap.com/v1/ticker/");
-            var request = new RestRequest("/"+inlineQueryEventArgs.InlineQuery.Query+"/?convert=EUR&limit=3", Method.GET);
+            var request = new RestRequest("/"+inlineQueryEventArgs.InlineQuery.Query+"/?convert=EUR&limit=25", Method.GET);
             // execute the request
             IRestResponse response = client.Execute(request);
             var content = response.Content; // raw content as string
@@ -75,7 +75,7 @@ namespace Telegram.Bot.Examples.Echo
 
             if (message == null || message.Type != MessageType.TextMessage) return;
 
-            await Bot.SendTextMessageAsync(message.Chat.Id, "Use inline, made by @evort");
+            await Bot.SendTextMessageAsync(message.Chat.Id, "Use inline, made by @evort, check https://github.com/EvertKors/CryptoBot");
            
         }
 

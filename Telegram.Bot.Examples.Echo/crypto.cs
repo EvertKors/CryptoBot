@@ -52,7 +52,7 @@ namespace Telegram.Bot.Examples.Echo
             {
                 Id =  rank,
                 Title = name,
-                Description = symbol,
+                Description = symbol + " $" + price_usd + " " + (percent_change_24h.Contains("-") ? "🔻" : "🔺") + percent_change_24h,
                 InputMessageContent = new InputTextMessageContent() {
                     MessageText = msg,
                     DisableWebPagePreview = false,
