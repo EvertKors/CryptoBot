@@ -41,9 +41,9 @@ namespace Telegram.Bot.Examples.Echo
             msg += "$" + price_usd + Environment.NewLine;
             msg += "€" + price_eur + Environment.NewLine;
             msg += Environment.NewLine;
-            msg += (percent_change_1h.Contains("-") ? "🔻" : "🔺") + "<i>1h " + percent_change_1h + "%</i>"+ Environment.NewLine;
-            msg += (percent_change_24h.Contains("-") ? "🔻" : "🔺") + "<i>24h " + percent_change_24h + "%</i>" + Environment.NewLine;
-            msg += (percent_change_7d.Contains("-") ? "🔻" : "🔺") + "<i>7d " + percent_change_7d + "%</i>" + Environment.NewLine;
+            if (percent_change_1h != null) msg += (percent_change_1h.Contains("-") ? "🔻" : "🔺") + "<i>1h " + percent_change_1h + "%</i>"+ Environment.NewLine;
+            if (percent_change_24h != null) msg += (percent_change_24h.Contains("-") ? "🔻" : "🔺") + "<i>24h " + percent_change_24h + "%</i>" + Environment.NewLine;
+            if(percent_change_7d != null)  msg += (percent_change_7d.Contains("-") ? "🔻" : "🔺") + "<i>7d " + percent_change_7d + "%</i>" + Environment.NewLine;
             msg += Environment.NewLine;
             msg += "<b>Market Cap</b>" + Environment.NewLine;
             msg += "$" + usd.ToString("#,##0") + Environment.NewLine;
